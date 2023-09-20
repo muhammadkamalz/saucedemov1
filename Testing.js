@@ -1,6 +1,6 @@
 const { Builder, Browser, By} = require ('selenium-webdriver')
 
-async function run () {
+async function test () {
     const driver =await new Builder()
         .forBrowser(Browser.CHROME)
         .build()
@@ -46,4 +46,4 @@ async function run () {
         //logout
     }  
 
-    run()
+    test()
