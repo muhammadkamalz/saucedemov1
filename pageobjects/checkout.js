@@ -15,11 +15,15 @@ class checkout extends halaman {
     summary = By.css('.summary_info')
     tombolcekout = By.css('.cart_button')
     complete = By.xpath('//h2[@class="complete-header"]')
+    pesanerror = By.xpath('//h3[contains(@data-test, "error")]')
 
     async open () {
         await this.driver.findElement(this.tombolout).click()
     }
 
+    async bukain() {
+        await this.buka('/checkout-step-one.html')
+    }
     async info(){
         return await this.driver.findElement(this.formcheckout)
     }
@@ -39,6 +43,10 @@ class checkout extends halaman {
 
     async completed(){
         return await this.driver.findElement(this.complete).getText()
+    }
+
+    async errormsg() {
+        return await this.driver.findElement(this.pesanerror).getText()
     }
 }
 

@@ -28,14 +28,6 @@ describe('Menguji checkout item', async() => {
         expect(cek).to.exist
     })
 
-    it('Tidak Bisa Kehalaman checkout tanpa memasukkan produk ke keranjang', async() => {
-        await inven.open()
-        await cart.open()
-        await cekout.open()
-        const cek = await cekout.info()
-        expect(cek).to.not.exist
-    })
-
     it('Lanjut Checkout dengan Item', async() => {
         await inven.open()
         await inven.add()

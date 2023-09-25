@@ -14,6 +14,8 @@ class Login extends halaman {
     submit = By.id('login-button')
     error = By.xpath('//h3[@data-test="error"]')
     logor = By.xpath('//div[contains(@class, "login_logo")]')
+    gambar = By.xpath('//div[@class="inventory_item_img"]//a//img')
+    judul = By.xpath('//div[@class="inventory_details_name"]')
 
     async open() {
         await this.buka('/')
@@ -30,6 +32,14 @@ class Login extends halaman {
 
     async logo () {
         return await this.driver.findElement(this.logor)
+    }
+
+    async image() {
+        await this.driver.findElement(this.gambar).click()
+    }
+
+    async title() {
+        return await this.driver.findElement(this.judul).getText()
     }
 }
 

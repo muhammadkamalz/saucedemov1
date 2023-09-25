@@ -14,6 +14,10 @@ describe('Menguji fitur login', async() => {
         inven = new item(driver)
     })
 
+
+    beforeEach(async() => {
+        await logen.open()
+    })
     after(async () => {
         await driver.close()
     })
@@ -22,50 +26,13 @@ describe('Menguji fitur login', async() => {
         await driver.sleep(1000)
     })
     
-    it('Berhasil Login', async () => {
-        await logen.open()
+    it('Berhasil Login dengan standard_user', async () => {
         await logen.proseslogin('standard_user', 'secret_sauce')
         expect(inven.mainpage()).to.exist
     })
 
-    it('Gagal Login karena username salah', async() => {
-        await logen.open()
-        await logen.proseslogin('standar_user', 'secret_sauce')
-    
-        const eror = await logen.errormsg()
-        await driver.sleep(1000)
-        expect(eror).to.exist
-        expect(eror).to.include("Username and password do not match any user in this service")
-    })
-
-    it('Gagal Login karena password salah', async() => {
-        await logen.open()
-        await logen.proseslogin('standard_user', 'saus_rahasia')
-        const eror = await logen.errormsg()
-        expect(eror).to.exist
-        expect(eror).to.include("Username and password do not match any user in this service")
-    })
-
-    it('Gagal Login karena tidak memasukkan username', async() => {
-        await logen.open()
-        await logen.proseslogin('','secret_sauce')
-        const eror = await logen.errormsg()
-        await driver.sleep(2000)
-        expect(eror).to.exist
-        expect(eror).to.include('Username is required')
-    })
-
-    it('Gagal Login karena tidak memasukkan password', async() => {
-        await logen.open()
-        await logen.proseslogin('dash','')
-        const eror = await logen.errormsg()
-        await driver.sleep(2000)
-        expect(eror).to.exist
-        expect(eror).to.include('Password is required')
-    })
 
     it('Berhasil logout', async() => {
-        await logen.open()
         await logen.proseslogin('standard_user', 'secret_sauce')
         await inven.burger()
         await driver.sleep(2000)

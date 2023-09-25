@@ -4,12 +4,16 @@
   "description": "",
   "main": "Testing.js",
   "scripts": {
-    "test": "mocha --no-timeouts tests/**/*.spec.js"
+    "test": "mocha --no-timeouts ./**/*.spec.js"
+    
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.3.8",
+    "chai-image": "^3.0.0",
     "mocha": "^10.2.0",
     "selenium": "^2.20.0",
     "selenium-webdriver": "^4.12.0"
