@@ -47,8 +47,8 @@ class visualtest extends page  {
     }
     
     async take1() {
-        const fotosintesis = await this.driver.takeScreenshot()
-        const sintesis =  Buffer.from(fotosintesis, 'base64')                                              
+        const fotograph = await this.driver.takeScreenshot()
+        const sintesis =  Buffer.from(fotograph, 'base64')                          
         writeFileSync(result, sintesis)                    
         return sintesis
     }
@@ -60,8 +60,8 @@ class visualtest extends page  {
 
 
     async take2() {
-        const fotosintesis = await this.driver.takeScreenshot()
-        const sintesis =  Buffer.from(fotosintesis, 'base64')                                              
+        const fotograph = await this.driver.takeScreenshot()
+        const sintesis =  Buffer.from(fotograph, 'base64')                                              
         writeFileSync(result2, sintesis)                    
         return sintesis
     }
@@ -73,8 +73,8 @@ class visualtest extends page  {
 
 
     async take3() {
-        const fotosintesis = await this.driver.takeScreenshot()
-        const sintesis =  Buffer.from(fotosintesis, 'base64')                                              
+        const fotograph = await this.driver.takeScreenshot()
+        const sintesis =  Buffer.from(fotograph, 'base64')                                              
         writeFileSync(result3, sintesis)                    
         return sintesis
     }
@@ -85,8 +85,8 @@ class visualtest extends page  {
     }
 
     async take4() {
-        const fotosintesis = await this.driver.takeScreenshot()
-        const sintesis =  Buffer.from(fotosintesis, 'base64')                                              
+        const fotograph = await this.driver.takeScreenshot()
+        const sintesis =  Buffer.from(fotograph, 'base64')                                              
         writeFileSync(result4, sintesis)                    
         return sintesis
     }
@@ -97,8 +97,8 @@ class visualtest extends page  {
     }
 
     async take5() {
-        const fotosintesis = await this.driver.takeScreenshot()
-        const sintesis =  Buffer.from(fotosintesis, 'base64')                                              
+        const fotograph = await this.driver.takeScreenshot()
+        const sintesis =  Buffer.from(fotograph, 'base64')                                              
         writeFileSync(result5, sintesis)                    
         return sintesis
     }
